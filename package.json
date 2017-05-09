@@ -1,0 +1,32 @@
+{
+  "name": "timestamp-microservice",
+  "version": "0.0.1",
+  "description": "A microservice to parse a date and time from a request and return a unix timestamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/setagana/timestamp-microservice.git"
+  },
+  "author": "Matthew de Beer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/setagana/timestamp-microservice/issues"
+  },
+  "homepage": "https://github.com/setagana/timestamp-microservice#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "mocha": "^3.3.0"
+  },
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
