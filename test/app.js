@@ -22,11 +22,23 @@ describe('Server', () => {
     });
 
     it('should respond with a 422 error if no date can be read', (done) => {
-      let reqInput = 'I contain no date.';
+      const reqInput = 'I contain no date.';
       chai.request(server)
         .get('/' + reqInput)
         .end((err, res) => {
           expect(res).to.have.status(422);
+          done();
+        });
+    });
+    
+    it('should respond with a timestamp if input contains a date in format DD/MM/YYYY', (done) => {
+      const reqInput = 'My date of birth was 01/01/1990.';
+      chai.request(server)
+        .get('/' + reqInput)
+        .end((err, res) => {
+          expect(err).to.be.null;
+          expect(res).to.have.status(200);
+          expect(res.body).to.have.property(timestamp).eql(631152000);
           done();
         });
     });

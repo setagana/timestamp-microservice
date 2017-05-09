@@ -4,7 +4,8 @@
   "description": "A microservice to parse a date and time from a request and return a unix timestamp",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node -e 'process.env.NODE_ENV = process.env.NODE_ENV || \"production\"; require(\"./index.js\");'"
   },
   "repository": {
     "type": "git",

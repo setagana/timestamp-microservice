@@ -4,7 +4,7 @@ const app = express();
 
 const routes = require('./routes/app');
 
-app.set('port', (process.env.PORT || 5000));
+const port = process.env.port || 5000;
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -15,5 +15,12 @@ router.route('/:reqInput')
   .get(routes.getTimestamp);
 
 app.use(router);
+
+app.use((err, req, res, next) => {
+  res.status(err.statusCode || 500);
+  res.send(err);
+});
+
+app.listen(port);
 
 module.exports = app;
