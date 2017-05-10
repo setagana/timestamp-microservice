@@ -17,7 +17,7 @@ router.route('/:reqInput')
 app.use(router);
 
 app.use((err, req, res, next) => {
-  res.status(err.statusCode || 500);
+  res.status(err.status || 500);
   res.send(err);
 });
 
